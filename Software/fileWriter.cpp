@@ -1,24 +1,34 @@
 #include <iostream>
-#include <fstream>
-#include <ctime>
+#include <string>
+#include <stdio.h>
 #include <time.h>
+#include <fstream>
 
 using namespace std;
+
+
+const string currentDateTime() {
+    time_t     now = time(0);
+    struct tm  tstruct;
+    char       buf[80];
+    tstruct = *localtime(&now);
+    strftime(buf, sizeof(buf), "%Y-%m-%d_%H-%M", &tstruct);
+
+    return buf;
+}
+
 
 int main()
 {
   time_t rawtime;
   struct tm*timeinfo;
-  char fileName[25];
-  string date;
-
-  time(&rawtime);
-  timeinfo = localtime(&rawtime);
+  string fileName;
+  string fileExtension = ".csv";
   ofstream outputFile;
-  date = asctime(timeinfo);
-  printf(date);
-  sprintf(fileName, "%s.csv", date);
-  printf(fileName);
+
+  cout << "currentDateTime()=" << currentDateTime() << endl;
+  fileName = currentDateTime()+fileExtension;
+  cout << fileName << endl;
   outputFile.open(fileName);
   outputFile << "1,2,3\n";
   outputFile << "4,5,6\n";
