@@ -1,4 +1,4 @@
-#include "SerialPort.h"
+#include "../include/SerialPort.h"
 
 SerialPort::SerialPort(char *portName)
 {
@@ -27,7 +27,7 @@ SerialPort::SerialPort(char *portName)
             printf("failed to get current serial parameters");
         }
         else {
-            dcbSerialParameters.BaudRate = CBR_9600;
+            dcbSerialParameters.BaudRate = CBR_115200;
             dcbSerialParameters.ByteSize = 8;
             dcbSerialParameters.StopBits = ONESTOPBIT;
             dcbSerialParameters.Parity = NOPARITY;
@@ -57,7 +57,7 @@ SerialPort::~SerialPort()
 int SerialPort::readSerialPort(char *buffer, unsigned int buf_size)
 {
     DWORD bytesRead;
-    unsigned int toRead;
+    unsigned int toRead = 0;
 
     ClearCommError(this->handler, &this->errors, &this->status);
 

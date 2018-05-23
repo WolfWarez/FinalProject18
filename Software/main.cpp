@@ -1,31 +1,21 @@
+#define DATA_LENGTH 255
+
+#include "include/SerialPort.h"
 #include <iostream>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "SerialPort.h"
 
-using std::cout;
-using std::endl;
+char* portName = "\\\\.\\COM10";
 
-/*Portname must contain these backslashes, and remember to
-replace the following com port*/
-char *port_name = "\\\\.\\COM20";
+//Declare a global object
+SerialPort *arduino;
 
-//String for incoming data
-char incomingData[MAX_DATA_LENGTH];
+//Here '\n' is a delimiter
+char receivedString[DATA_LENGTH];
 
-int main()
+int main(void)
 {
-  SerialPort arduino(port_name);
-  if (arduino.isConnected()) cout << "Connection Established" << endl;
-  else cout << "ERROR, check port name";
-
-  while (arduino.isConnected()){
-    //Check if data has been read or not
-    int read_result = arduino.readSerialPort(incomingData, MAX_DATA_LENGTH);
-    //prints out data
-    puts(incomingData);
-    //wait a bit
-    Sleep(10);
+  arduino = new SerialPort(portName);
+  while (arduino->isConnected()){
+    int hasRead = arduino->readSerialPort(receivedString, DATA_LENGTH);
+    if (hasRead) printf("%s ", receivedString);
   }
 }
