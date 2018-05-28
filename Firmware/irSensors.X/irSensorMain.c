@@ -111,22 +111,73 @@ int main(void)
     MasterStateCtr = MASTER_COUNT_TICKS;
     AnalogSampleCtr = ANALOG_SAMPLE_TICKS;
 
+    initMotorPWMs();
+    OC2RS = 0x012C;
+    OC4RS = 0x012C;
+
     
 while(1)
 {
-    if(fLeftSensorDetect)
+    if(L_SENSOR == INPUT_ON)
     {
-        fLeftSensorDetect = FALSE;
-        sprintf(TX2buffer, "L%u\r\n", lTimerCapture);
-        kickU2TX();
+        LED_ONB1 = LED_ON;
+    }
+    else
+    {
+        LED_ONB1 = LED_OFF;
+    }
+            
+    if(R_SENSOR == INPUT_ON)
+    {
+        LED_ONB2 = LED_ON;
+    }
+    else
+    {
+        LED_ONB2 = LED_OFF;
+    }
+    
+    
+    
+    
+    if(fLeftSensorDetect != DETECT_NONE)
+    {
+        switch(fLeftSensorDetect)
+        {
+            case DETECT_ON:                            
+                sprintf(TX2buffer, "LN,%lu\n", lTimerCapture);
+                kickU2TX();
+                break;
+
+            case DETECT_OFF:
+                sprintf(TX2buffer, "LF,%lu\n", lTimerCapture);
+                kickU2TX();
+                break;
+            
+            default:
+                break;                
+        }
+        fLeftSensorDetect = DETECT_NONE;
     }
 
 
     if(fRightSensorDetect)
     {
-        fRightSensorDetect = FALSE;
-        sprintf(TX2buffer, "L%u\r\n", rTimerCapture);
-        kickU2TX();
+        switch(fRightSensorDetect)
+        {
+            case DETECT_ON:                            
+                sprintf(TX2buffer, "RN,%lu\n", rTimerCapture);
+                kickU2TX();
+                break;
+
+            case DETECT_OFF:
+                sprintf(TX2buffer, "RF,%lu\n", rTimerCapture);
+                kickU2TX();
+                break;
+            
+            default:
+                break;                
+        }
+        fRightSensorDetect = DETECT_NONE;
     }
 
 }

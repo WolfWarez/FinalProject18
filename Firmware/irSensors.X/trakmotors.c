@@ -123,7 +123,7 @@ void initMotorPWMs(void)
     OC4RS = 0x0000; // Initialize secondary Compare register    
     OC4CON = 0x0006; // Configure for PWM mode without Fault pin enabled
 
-    PR2 = MOTOR_PWM_PERIOD; // Set period
+    PR2 = MOTOR_PWM_PERIOD * 3; // Set period
     
     IFS0CLR = 0x00000100; // Clear the T2 interrupt flag
 //    IEC0SET = 0x00000100; // Enable T2 interrupt

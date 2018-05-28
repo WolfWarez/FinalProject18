@@ -39,6 +39,14 @@ void InitializeHardware(void)
     LED_ONB2 = 0;
     LED_ONB1_TRIS = 0;
     LED_ONB2_TRIS = 0;
+    LED_PI1 = 0;
+    LED_PI2 = 0;
+    LED_PI1_TRIS = 0;
+    LED_PI2_TRIS = 0;
+    
+    ODO_L_IN_TRIS = 1;
+    ODO_R_IN_TRIS = 1;
+    
     
     COLOR_SENSE_LED_TRIS = 0;
         

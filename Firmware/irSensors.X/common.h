@@ -38,6 +38,12 @@ typedef enum{
 
 #define BAD_STATE 0xFF      //numerous hardware types may return a bad state, this will be 0xFF
 
+typedef enum{
+    DETECT_NONE,
+    DETECT_ON,
+    DETECT_OFF
+}SENSOR_STATE_T;
+
 
 extern uint32 cumulativeRightOdometer;
 extern uint32 cumulativeLeftOdometer;
@@ -49,6 +55,9 @@ extern uint8 fRightSensorDetect;
 
 extern uint32 lTimerCapture;
 extern uint32 rTimerCapture;
+
+
+
 
 
 //#define TRUE 1

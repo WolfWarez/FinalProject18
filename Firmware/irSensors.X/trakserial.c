@@ -175,7 +175,8 @@ void __ISR(_UART2_VECTOR, IPL4SOFT) IntUart2Handler(void)
     if(IFS1bits.U2RXIF)
     {
         //save the incoming byte
-        LED_ONB1 = LED_ON;
+        //LED_ONB1 = LED_ON;
+        LED_PI1 = LED_ON;
         //incoming = ReadUART2();
         incoming = U2RXREG;
         RX2buffer[RX2inputptr] = incoming;
@@ -186,8 +187,9 @@ void __ISR(_UART2_VECTOR, IPL4SOFT) IntUart2Handler(void)
             RX2DataFlag = RECEIVED_COMMAND;
         }
 
-        IFS1bits.U2RXIF = 0;            //mU2RXClearIntFlag();    // Clear the RX interrupt Flag
-        LED_ONB1 = LED_OFF;
+        IFS1bits.U2RXIF = 0;            //mU2RXClearIntFlag();    // Clear the RX interrupt Flag        
+        //LED_ONB1 = LED_OFF;
+        LED_PI1 = LED_OFF;
 	//	putcUART2(incoming);	// Echo what we just received.
     }
 

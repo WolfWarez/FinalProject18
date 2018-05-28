@@ -24,16 +24,8 @@
 uint16 MasterStateCtr;
 uint16 AnalogSampleCtr;
 
-typedef enum{
-    SENSOR_OFF,
-    SENSOR_ON
-}SENSOR_STATE_T;
 
-#define INPUT_ON 1
-#define INPUT_OFF 0
 
-#define L_SENSOR ODO_L_IN
-#define R_SENSOR ODO_R_IN
 
 
 SENSOR_STATE_T lPreviousState;
@@ -62,7 +54,7 @@ void CheckSensorInputs(void)
         {
             lPreviousState = SENSOR_OFF;
             lTimerCapture = SystemTicks;
-            fLeftSensorDetect = TRUE;
+            fLeftSensorDetect = DETECT_OFF;
         }
     }
     else
@@ -70,6 +62,8 @@ void CheckSensorInputs(void)
         if(L_SENSOR == INPUT_ON)
         {
             lPreviousState = SENSOR_ON;
+            lTimerCapture = SystemTicks;
+            fLeftSensorDetect = DETECT_ON;
         }
     }
 
@@ -80,7 +74,7 @@ void CheckSensorInputs(void)
         {
             rPreviousState = SENSOR_OFF;
             rTimerCapture = SystemTicks;
-            fRightSensorDetect = TRUE;
+            fRightSensorDetect = DETECT_OFF;
         }
     }
     else
@@ -88,6 +82,8 @@ void CheckSensorInputs(void)
         if(R_SENSOR == INPUT_ON)
         {
             rPreviousState = SENSOR_ON;
+            rTimerCapture = SystemTicks;
+            fRightSensorDetect = DETECT_ON;
         }
     }
     
@@ -140,7 +136,8 @@ void __ISR(_TIMER_3_VECTOR, IPL2SOFT) _T3Interrupt( void )
         counts++;
         if(counts >= 500)
         {
-            LED_ONB2^=1;
+            //LED_ONB2^=1;
+            LED_PI2^1;
             counts = 0;
         }
         if(AnalogSampleCtr > 0) AnalogSampleCtr--;

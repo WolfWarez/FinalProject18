@@ -250,6 +250,17 @@ typedef enum{
 #define aSPARE4_CH              9    
 
 
+
+//hardware defines for IR sensor
+#define INPUT_ON 1
+#define INPUT_OFF 0
+
+#define L_SENSOR ODO_L_IN
+#define R_SENSOR ODO_R_IN
+
+
+
+
 //Hardware related globals    
 extern uint16 DelayTicks;    
 extern uint32 SystemTicks;
