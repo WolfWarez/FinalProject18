@@ -2,6 +2,16 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/E:/Users/KMW/TechProjects/Client%20Projects/final-projects/FinalProject18/Firmware/irSensors.X/irSensorMain.c</file>
+            <file>file:/E:/Users/KMW/TechProjects/Client%20Projects/final-projects/FinalProject18/Firmware/irSensors.X/trakcommands.c</file>
+            <file>file:/E:/Users/KMW/TechProjects/Client%20Projects/final-projects/FinalProject18/Firmware/irSensors.X/trak-ints.c</file>
+            <file>file:/E:/Users/KMW/TechProjects/Client%20Projects/final-projects/FinalProject18/Firmware/irSensors.X/common.h</file>
+            <file>file:/E:/Users/KMW/TechProjects/Client%20Projects/final-projects/FinalProject18/Firmware/irSensors.X/trakhardware.c</file>
+            <file>file:/E:/Users/KMW/TechProjects/Client%20Projects/final-projects/FinalProject18/Firmware/irSensors.X/trakhardware.h</file>
+            <file>file:/E:/Users/KMW/TechProjects/Client%20Projects/final-projects/FinalProject18/Firmware/irSensors.X/trakmotors.c</file>
+            <file>file:/E:/Users/KMW/TechProjects/Client%20Projects/final-projects/FinalProject18/Firmware/irSensors.X/trakmotors.h</file>
+            <file>file:/E:/Users/KMW/TechProjects/Client%20Projects/final-projects/FinalProject18/Firmware/irSensors.X/trakserial.c</file>
+        </group>
     </open-files>
 </project-private>
