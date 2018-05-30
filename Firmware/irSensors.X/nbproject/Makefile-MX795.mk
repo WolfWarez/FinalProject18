@@ -39,9 +39,15 @@ FINAL_IMAGE=dist/${CND_CONF}/${IMAGE_TYPE}/irSensors.X.${IMAGE_TYPE}.${OUTPUT_SU
 endif
 
 ifeq ($(COMPARE_BUILD), true)
-COMPARISON_BUILD=
+COMPARISON_BUILD=-mafrlcsj
 else
 COMPARISON_BUILD=
+endif
+
+ifdef SUB_IMAGE_ADDRESS
+
+else
+SUB_IMAGE_ADDRESS_COMMAND=
 endif
 
 # Object Directory
@@ -104,146 +110,146 @@ ${OBJECTDIR}/trakhardware.o: trakhardware.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/trakhardware.o.d 
 	@${RM} ${OBJECTDIR}/trakhardware.o 
-	@${FIXDEPS} "${OBJECTDIR}/trakhardware.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakhardware.o.d" -o ${OBJECTDIR}/trakhardware.o trakhardware.c    -DXPRJ_MX795=$(CND_CONF)    $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
+	@${FIXDEPS} "${OBJECTDIR}/trakhardware.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DICD3PlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakhardware.o.d" -o ${OBJECTDIR}/trakhardware.o trakhardware.c    -DXPRJ_MX795=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
 	
 ${OBJECTDIR}/trakserial.o: trakserial.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/trakserial.o.d 
 	@${RM} ${OBJECTDIR}/trakserial.o 
-	@${FIXDEPS} "${OBJECTDIR}/trakserial.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakserial.o.d" -o ${OBJECTDIR}/trakserial.o trakserial.c    -DXPRJ_MX795=$(CND_CONF)    $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
+	@${FIXDEPS} "${OBJECTDIR}/trakserial.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DICD3PlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakserial.o.d" -o ${OBJECTDIR}/trakserial.o trakserial.c    -DXPRJ_MX795=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
 	
 ${OBJECTDIR}/trakcommands.o: trakcommands.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/trakcommands.o.d 
 	@${RM} ${OBJECTDIR}/trakcommands.o 
-	@${FIXDEPS} "${OBJECTDIR}/trakcommands.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakcommands.o.d" -o ${OBJECTDIR}/trakcommands.o trakcommands.c    -DXPRJ_MX795=$(CND_CONF)    $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
+	@${FIXDEPS} "${OBJECTDIR}/trakcommands.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DICD3PlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakcommands.o.d" -o ${OBJECTDIR}/trakcommands.o trakcommands.c    -DXPRJ_MX795=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
 	
 ${OBJECTDIR}/trakLEDs.o: trakLEDs.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/trakLEDs.o.d 
 	@${RM} ${OBJECTDIR}/trakLEDs.o 
-	@${FIXDEPS} "${OBJECTDIR}/trakLEDs.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakLEDs.o.d" -o ${OBJECTDIR}/trakLEDs.o trakLEDs.c    -DXPRJ_MX795=$(CND_CONF)    $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
+	@${FIXDEPS} "${OBJECTDIR}/trakLEDs.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DICD3PlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakLEDs.o.d" -o ${OBJECTDIR}/trakLEDs.o trakLEDs.c    -DXPRJ_MX795=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
 	
 ${OBJECTDIR}/trakbarometer.o: trakbarometer.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/trakbarometer.o.d 
 	@${RM} ${OBJECTDIR}/trakbarometer.o 
-	@${FIXDEPS} "${OBJECTDIR}/trakbarometer.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakbarometer.o.d" -o ${OBJECTDIR}/trakbarometer.o trakbarometer.c    -DXPRJ_MX795=$(CND_CONF)    $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
+	@${FIXDEPS} "${OBJECTDIR}/trakbarometer.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DICD3PlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakbarometer.o.d" -o ${OBJECTDIR}/trakbarometer.o trakbarometer.c    -DXPRJ_MX795=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
 	
 ${OBJECTDIR}/trakeep.o: trakeep.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/trakeep.o.d 
 	@${RM} ${OBJECTDIR}/trakeep.o 
-	@${FIXDEPS} "${OBJECTDIR}/trakeep.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakeep.o.d" -o ${OBJECTDIR}/trakeep.o trakeep.c    -DXPRJ_MX795=$(CND_CONF)    $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
+	@${FIXDEPS} "${OBJECTDIR}/trakeep.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DICD3PlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakeep.o.d" -o ${OBJECTDIR}/trakeep.o trakeep.c    -DXPRJ_MX795=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
 	
 ${OBJECTDIR}/trakaccel.o: trakaccel.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/trakaccel.o.d 
 	@${RM} ${OBJECTDIR}/trakaccel.o 
-	@${FIXDEPS} "${OBJECTDIR}/trakaccel.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakaccel.o.d" -o ${OBJECTDIR}/trakaccel.o trakaccel.c    -DXPRJ_MX795=$(CND_CONF)    $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
+	@${FIXDEPS} "${OBJECTDIR}/trakaccel.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DICD3PlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakaccel.o.d" -o ${OBJECTDIR}/trakaccel.o trakaccel.c    -DXPRJ_MX795=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
 	
 ${OBJECTDIR}/trakADC.o: trakADC.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/trakADC.o.d 
 	@${RM} ${OBJECTDIR}/trakADC.o 
-	@${FIXDEPS} "${OBJECTDIR}/trakADC.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakADC.o.d" -o ${OBJECTDIR}/trakADC.o trakADC.c    -DXPRJ_MX795=$(CND_CONF)    $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
+	@${FIXDEPS} "${OBJECTDIR}/trakADC.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DICD3PlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakADC.o.d" -o ${OBJECTDIR}/trakADC.o trakADC.c    -DXPRJ_MX795=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
 	
 ${OBJECTDIR}/p32_i2c2.o: p32_i2c2.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/p32_i2c2.o.d 
 	@${RM} ${OBJECTDIR}/p32_i2c2.o 
-	@${FIXDEPS} "${OBJECTDIR}/p32_i2c2.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/p32_i2c2.o.d" -o ${OBJECTDIR}/p32_i2c2.o p32_i2c2.c    -DXPRJ_MX795=$(CND_CONF)    $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
+	@${FIXDEPS} "${OBJECTDIR}/p32_i2c2.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DICD3PlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/p32_i2c2.o.d" -o ${OBJECTDIR}/p32_i2c2.o p32_i2c2.c    -DXPRJ_MX795=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
 	
 ${OBJECTDIR}/trak-ints.o: trak-ints.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/trak-ints.o.d 
 	@${RM} ${OBJECTDIR}/trak-ints.o 
-	@${FIXDEPS} "${OBJECTDIR}/trak-ints.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trak-ints.o.d" -o ${OBJECTDIR}/trak-ints.o trak-ints.c    -DXPRJ_MX795=$(CND_CONF)    $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
+	@${FIXDEPS} "${OBJECTDIR}/trak-ints.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DICD3PlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trak-ints.o.d" -o ${OBJECTDIR}/trak-ints.o trak-ints.c    -DXPRJ_MX795=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
 	
 ${OBJECTDIR}/trakmotors.o: trakmotors.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/trakmotors.o.d 
 	@${RM} ${OBJECTDIR}/trakmotors.o 
-	@${FIXDEPS} "${OBJECTDIR}/trakmotors.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakmotors.o.d" -o ${OBJECTDIR}/trakmotors.o trakmotors.c    -DXPRJ_MX795=$(CND_CONF)    $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
+	@${FIXDEPS} "${OBJECTDIR}/trakmotors.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DICD3PlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakmotors.o.d" -o ${OBJECTDIR}/trakmotors.o trakmotors.c    -DXPRJ_MX795=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
 	
 ${OBJECTDIR}/irSensorMain.o: irSensorMain.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/irSensorMain.o.d 
 	@${RM} ${OBJECTDIR}/irSensorMain.o 
-	@${FIXDEPS} "${OBJECTDIR}/irSensorMain.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/irSensorMain.o.d" -o ${OBJECTDIR}/irSensorMain.o irSensorMain.c    -DXPRJ_MX795=$(CND_CONF)    $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
+	@${FIXDEPS} "${OBJECTDIR}/irSensorMain.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -DICD3PlatformTool=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/irSensorMain.o.d" -o ${OBJECTDIR}/irSensorMain.o irSensorMain.c    -DXPRJ_MX795=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
 	
 else
 ${OBJECTDIR}/trakhardware.o: trakhardware.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/trakhardware.o.d 
 	@${RM} ${OBJECTDIR}/trakhardware.o 
-	@${FIXDEPS} "${OBJECTDIR}/trakhardware.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakhardware.o.d" -o ${OBJECTDIR}/trakhardware.o trakhardware.c    -DXPRJ_MX795=$(CND_CONF)    $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
+	@${FIXDEPS} "${OBJECTDIR}/trakhardware.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakhardware.o.d" -o ${OBJECTDIR}/trakhardware.o trakhardware.c    -DXPRJ_MX795=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
 	
 ${OBJECTDIR}/trakserial.o: trakserial.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/trakserial.o.d 
 	@${RM} ${OBJECTDIR}/trakserial.o 
-	@${FIXDEPS} "${OBJECTDIR}/trakserial.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakserial.o.d" -o ${OBJECTDIR}/trakserial.o trakserial.c    -DXPRJ_MX795=$(CND_CONF)    $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
+	@${FIXDEPS} "${OBJECTDIR}/trakserial.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakserial.o.d" -o ${OBJECTDIR}/trakserial.o trakserial.c    -DXPRJ_MX795=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
 	
 ${OBJECTDIR}/trakcommands.o: trakcommands.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/trakcommands.o.d 
 	@${RM} ${OBJECTDIR}/trakcommands.o 
-	@${FIXDEPS} "${OBJECTDIR}/trakcommands.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakcommands.o.d" -o ${OBJECTDIR}/trakcommands.o trakcommands.c    -DXPRJ_MX795=$(CND_CONF)    $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
+	@${FIXDEPS} "${OBJECTDIR}/trakcommands.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakcommands.o.d" -o ${OBJECTDIR}/trakcommands.o trakcommands.c    -DXPRJ_MX795=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
 	
 ${OBJECTDIR}/trakLEDs.o: trakLEDs.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/trakLEDs.o.d 
 	@${RM} ${OBJECTDIR}/trakLEDs.o 
-	@${FIXDEPS} "${OBJECTDIR}/trakLEDs.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakLEDs.o.d" -o ${OBJECTDIR}/trakLEDs.o trakLEDs.c    -DXPRJ_MX795=$(CND_CONF)    $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
+	@${FIXDEPS} "${OBJECTDIR}/trakLEDs.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakLEDs.o.d" -o ${OBJECTDIR}/trakLEDs.o trakLEDs.c    -DXPRJ_MX795=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
 	
 ${OBJECTDIR}/trakbarometer.o: trakbarometer.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/trakbarometer.o.d 
 	@${RM} ${OBJECTDIR}/trakbarometer.o 
-	@${FIXDEPS} "${OBJECTDIR}/trakbarometer.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakbarometer.o.d" -o ${OBJECTDIR}/trakbarometer.o trakbarometer.c    -DXPRJ_MX795=$(CND_CONF)    $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
+	@${FIXDEPS} "${OBJECTDIR}/trakbarometer.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakbarometer.o.d" -o ${OBJECTDIR}/trakbarometer.o trakbarometer.c    -DXPRJ_MX795=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
 	
 ${OBJECTDIR}/trakeep.o: trakeep.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/trakeep.o.d 
 	@${RM} ${OBJECTDIR}/trakeep.o 
-	@${FIXDEPS} "${OBJECTDIR}/trakeep.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakeep.o.d" -o ${OBJECTDIR}/trakeep.o trakeep.c    -DXPRJ_MX795=$(CND_CONF)    $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
+	@${FIXDEPS} "${OBJECTDIR}/trakeep.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakeep.o.d" -o ${OBJECTDIR}/trakeep.o trakeep.c    -DXPRJ_MX795=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
 	
 ${OBJECTDIR}/trakaccel.o: trakaccel.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/trakaccel.o.d 
 	@${RM} ${OBJECTDIR}/trakaccel.o 
-	@${FIXDEPS} "${OBJECTDIR}/trakaccel.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakaccel.o.d" -o ${OBJECTDIR}/trakaccel.o trakaccel.c    -DXPRJ_MX795=$(CND_CONF)    $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
+	@${FIXDEPS} "${OBJECTDIR}/trakaccel.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakaccel.o.d" -o ${OBJECTDIR}/trakaccel.o trakaccel.c    -DXPRJ_MX795=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
 	
 ${OBJECTDIR}/trakADC.o: trakADC.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/trakADC.o.d 
 	@${RM} ${OBJECTDIR}/trakADC.o 
-	@${FIXDEPS} "${OBJECTDIR}/trakADC.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakADC.o.d" -o ${OBJECTDIR}/trakADC.o trakADC.c    -DXPRJ_MX795=$(CND_CONF)    $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
+	@${FIXDEPS} "${OBJECTDIR}/trakADC.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakADC.o.d" -o ${OBJECTDIR}/trakADC.o trakADC.c    -DXPRJ_MX795=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
 	
 ${OBJECTDIR}/p32_i2c2.o: p32_i2c2.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/p32_i2c2.o.d 
 	@${RM} ${OBJECTDIR}/p32_i2c2.o 
-	@${FIXDEPS} "${OBJECTDIR}/p32_i2c2.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/p32_i2c2.o.d" -o ${OBJECTDIR}/p32_i2c2.o p32_i2c2.c    -DXPRJ_MX795=$(CND_CONF)    $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
+	@${FIXDEPS} "${OBJECTDIR}/p32_i2c2.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/p32_i2c2.o.d" -o ${OBJECTDIR}/p32_i2c2.o p32_i2c2.c    -DXPRJ_MX795=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
 	
 ${OBJECTDIR}/trak-ints.o: trak-ints.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/trak-ints.o.d 
 	@${RM} ${OBJECTDIR}/trak-ints.o 
-	@${FIXDEPS} "${OBJECTDIR}/trak-ints.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trak-ints.o.d" -o ${OBJECTDIR}/trak-ints.o trak-ints.c    -DXPRJ_MX795=$(CND_CONF)    $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
+	@${FIXDEPS} "${OBJECTDIR}/trak-ints.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trak-ints.o.d" -o ${OBJECTDIR}/trak-ints.o trak-ints.c    -DXPRJ_MX795=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
 	
 ${OBJECTDIR}/trakmotors.o: trakmotors.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/trakmotors.o.d 
 	@${RM} ${OBJECTDIR}/trakmotors.o 
-	@${FIXDEPS} "${OBJECTDIR}/trakmotors.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakmotors.o.d" -o ${OBJECTDIR}/trakmotors.o trakmotors.c    -DXPRJ_MX795=$(CND_CONF)    $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
+	@${FIXDEPS} "${OBJECTDIR}/trakmotors.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/trakmotors.o.d" -o ${OBJECTDIR}/trakmotors.o trakmotors.c    -DXPRJ_MX795=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
 	
 ${OBJECTDIR}/irSensorMain.o: irSensorMain.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/irSensorMain.o.d 
 	@${RM} ${OBJECTDIR}/irSensorMain.o 
-	@${FIXDEPS} "${OBJECTDIR}/irSensorMain.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/irSensorMain.o.d" -o ${OBJECTDIR}/irSensorMain.o irSensorMain.c    -DXPRJ_MX795=$(CND_CONF)    $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
+	@${FIXDEPS} "${OBJECTDIR}/irSensorMain.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/irSensorMain.o.d" -o ${OBJECTDIR}/irSensorMain.o irSensorMain.c    -DXPRJ_MX795=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -DSYS_CLOCK=24000000
 	
 endif
 
@@ -258,12 +264,12 @@ endif
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 dist/${CND_CONF}/${IMAGE_TYPE}/irSensors.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CC} $(MP_EXTRA_LD_PRE)  -mdebugger -D__MPLAB_DEBUGGER_ICD3=1 -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/irSensors.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}          -DXPRJ_MX795=$(CND_CONF)    $(COMPARISON_BUILD)   -mreserve=data@0x0:0x1FC -mreserve=boot@0x1FC02000:0x1FC02FEF -mreserve=boot@0x1FC02000:0x1FC024FF  -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_ICD3=1,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml
+	${MP_CC} $(MP_EXTRA_LD_PRE) -g -mdebugger -DICD3PlatformTool=1 -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/irSensors.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}          -DXPRJ_MX795=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)   -mreserve=data@0x0:0x1FC -mreserve=boot@0x1FC02000:0x1FC02FEF -mreserve=boot@0x1FC02000:0x1FC024FF  -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,-D=__DEBUG_D,--defsym=ICD3PlatformTool=1,--no-code-in-dinit,--no-dinit-in-serial-mem,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml
 	
 else
 dist/${CND_CONF}/${IMAGE_TYPE}/irSensors.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CC} $(MP_EXTRA_LD_PRE)  -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/irSensors.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}          -DXPRJ_MX795=$(CND_CONF)    $(COMPARISON_BUILD)  -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml
+	${MP_CC} $(MP_EXTRA_LD_PRE)  -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/irSensors.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}          -DXPRJ_MX795=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--no-code-in-dinit,--no-dinit-in-serial-mem,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml
 	${MP_CC_DIR}\\xc32-bin2hex dist/${CND_CONF}/${IMAGE_TYPE}/irSensors.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} 
 endif
 

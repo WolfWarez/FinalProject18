@@ -2,6 +2,7 @@
 //#include "common.h"
 #include <xc.h>
 #include <sys/attribs.h>        //note: this include is needed for interrupts
+#include <string.h>
 #include "common.h"
 #include "trakhardware.h"
 #include "trakserial.h"
@@ -53,6 +54,7 @@ void kickU2TX(void)
     TX2enabled = 1;
     U2TXREG = TX2buffer[TX2ptr];
     IEC1bits.U2TXIE = 1;
+    LED_PI1= LED_ON;
 }
 
 
@@ -210,6 +212,7 @@ void __ISR(_UART2_VECTOR, IPL4SOFT) IntUart2Handler(void)
             {
                 IEC1bits.U2TXIE = 0;        //INTEnable(INT_U2TX, INT_DISABLED);  //disable interrupt
                 TX2enabled = 0;
+                LED_PI1= LED_OFF;
             }
             else
             {

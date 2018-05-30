@@ -1,4 +1,4 @@
-#define DATA_LENGTH 255
+#define DATA_LENGTH 64
 
 #include "include/SerialPort.h"
 #include <iostream>
@@ -7,11 +7,12 @@
 #include <time.h>
 #include <fstream>
 #include <SFML/Graphics.hpp>
+#include <conio.h>
 
 using namespace std;
 
 //Set Port
-char* portName = "\\\\.\\COM10";
+char* portName = "\\\\.\\COM4";
 
 //Declare a global object
 SerialPort *arduino;
@@ -29,24 +30,35 @@ const string currentDateTime() {
     return buf;
 }
 
-sf::CircleShape RCircleMaker(string);
-sf::CircleShape LCircleMaker(string);
+
 
 int main()
 {
-  //Variables: Time Stuff
-  time_t rawtime;
-  struct tm*timeinfo;
   //Variables: File Stuff
   string fileName;
   string fileExtension = ".csv";
   ofstream outputFile;
   string serialInput;
-  //Variables: Visual Stuff
-  sf::CircleShape RCircle;
-  sf::CircleShape LCircle;
+  //Variables: Visual Stuff-Not Working
+  /*
+  sf::CircleShape RCircle(100);
+  RCircle.setPosition(100,300);
+  RCircle.setFillColor(sf::Color(255,0,0));
+  sf::CircleShape LCircle(100);
+  LCircle.setPosition(500,300);
+  LCircle.setFillColor(sf::Color(255,0,0));
+  */
   //Variables: Serial Stuff
   arduino = new SerialPort(portName);
+  string delimiter = "\n";
+  string input;
+  string output;
+  string serialBuffer;
+  string hold;
+  int inputLength;
+  int hasRead;
+  size_t found;
+
   //End of Variables
 
 
@@ -57,7 +69,46 @@ int main()
     fileName = currentDateTime()+fileExtension;
     cout << fileName << endl;
     outputFile.open(fileName);
-    //Visual Representation
+    outputFile << "Side, Time\n";
+
+
+
+    while(true)
+    {
+
+      //Receive Serial Data
+        hasRead = arduino->readSerialPort(receivedString, DATA_LENGTH);
+        if(hasRead)
+        {
+            serialBuffer.assign((const char*) receivedString, hasRead);
+            cout << "sB:  " << serialBuffer << endl;
+
+            input = input+serialBuffer;
+            serialBuffer.clear();
+
+            found = input.find(delimiter);
+            if(found!=string::npos)
+            {
+                //Writing to the File
+                cout << "input:  " << input << endl;
+                output = input.substr(0,found + 1);
+                outputFile << output;
+                output.clear();
+                inputLength = input.length();
+                hold.clear();
+                hold = input.substr(found + 1, inputLength);
+                input.clear();
+                input = hold;
+            }
+//          hasRead = 0;
+        }
+        if(_kbhit()) break;
+    }
+  outputFile.close();
+  }
+}
+    //Visual Representation-Not Working
+    /*
     sf::RenderWindow window(sf::VideoMode(800, 600), "JWFIN Newton's Cradle");
     while(window.isOpen())
     {
@@ -68,27 +119,40 @@ int main()
           {
             window.close();
           }
+      //Receive Serial Data
       int hasRead = arduino->readSerialPort(receivedString, DATA_LENGTH);
       if (hasRead) printf("%s ", receivedString);
       //Writing to the File
-      outputFile << receivedString;
+      input.assign((const char*) receivedString, 255);
+      cout << input << endl;
+      outputFile << input;
       window.clear();
-      RCircle = RCircleMaker(receivedString);
-      RCircle = LCircleMaker(receivedString);
+      //Right Circle
+      size_t found = input.find("RN");
+      if (found!=std::string::npos)
+      {
+        RCircle.setFillColor(sf::Color(0,255,0));
+      }
+      found = input.find("RF");
+      if (found!=std::string::npos)
+      {
+        RCircle.setFillColor(sf::Color(255,0,0));
+      }
+      //Left Circle
+      found = input.find("LN");
+      if (found!=std::string::npos)
+      {
+        LCircle.setFillColor(sf::Color(0,255,0));
+      }
+      found = input.find("LF");
+      if (found!=std::string::npos)
+      {
+        LCircle.setFillColor(sf::Color(255,0,0));
+      }
       window.draw(RCircle);
       window.draw(LCircle);
       window.display();
     }
-    outputFile.close();
-  }
-}
 
-sf::CircleShape RCicleMaker(string input)
-{
-
-}
-
-sf::CircleShape LCicleMaker(string input)
-{
-
-}
+ }
+ */

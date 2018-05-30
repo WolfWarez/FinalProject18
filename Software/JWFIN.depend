@@ -11,3 +11,21 @@
 1527045566 source:c:\users\lucaster\documents\github\finalproject18\software\src\serialport.cpp
 	"../include/SerialPort.h"
 
+1527464729 source:c:\users\keith.keith-pc\documents\tech-projects\finalproject18\software\src\serialport.cpp
+	"../include/SerialPort.h"
+
+1527464729 c:\users\keith.keith-pc\documents\tech-projects\finalproject18\software\include\serialport.h
+	<windows.h>
+	<stdio.h>
+	<stdlib.h>
+
+1527660419 source:c:\users\keith.keith-pc\documents\tech-projects\finalproject18\software\main.cpp
+	"include/SerialPort.h"
+	<iostream>
+	<string>
+	<stdio.h>
+	<time.h>
+	<fstream>
+	<SFML/Graphics.hpp>
+	<conio.h>
+

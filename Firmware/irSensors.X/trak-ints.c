@@ -10,6 +10,8 @@
 #include "trak-ints.h"
 #include "common.h"
 
+#define SENSOR_ON 1
+#define SENSOR_OFF 0
 
 
 #ifndef TRUE
@@ -137,12 +139,13 @@ void __ISR(_TIMER_3_VECTOR, IPL2SOFT) _T3Interrupt( void )
         if(counts >= 500)
         {
             //LED_ONB2^=1;
-            LED_PI2^1;
+            LED_PI2^=1;
             counts = 0;
         }
         if(AnalogSampleCtr > 0) AnalogSampleCtr--;
         if(MasterStateCtr > 0) MasterStateCtr--;        
         SystemTicks++;
+        CheckSensorInputs();
     }
 }
 

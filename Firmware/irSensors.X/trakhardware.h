@@ -252,8 +252,8 @@ typedef enum{
 
 
 //hardware defines for IR sensor
-#define INPUT_ON 1
-#define INPUT_OFF 0
+#define INPUT_ON 0
+#define INPUT_OFF 1
 
 #define L_SENSOR ODO_L_IN
 #define R_SENSOR ODO_R_IN
